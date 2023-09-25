@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <div>
            <Banner></Banner>  
-           <MainCart donations = {donations} ></MainCart>
+           <MainCart donations={donations}></MainCart>
         </div>
     );
 };
