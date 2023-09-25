@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-import { toast } from "react-toastify";
+import swal from "sweetalert";
+// import { toast } from "react-toastify";
+// import { Toast } from "react-toastify/dist/components";
 
 
 const Details = () => {
@@ -36,14 +38,23 @@ const Details = () => {
              
             donationlist.push(donatedetails)
             localStorage.setItem('list',JSON.stringify(donationlist))
-            return toast('Thankyou for Donation');
+            swal('Thankyou for Donation');
             
         }
         else{
+
+
+            const similer = donatelist.find(donatedetails => donatedetails.id == id )
+             if(!similer){
+
+           
             donationlist.push(...donatelist,donatedetails)
             localStorage.setItem('list',JSON.stringify(donationlist))
-            return toast('Thankyou for Donation');
-
+            swal ('Thankyou for Donation');
+            }
+        else{
+            swal ('you can donate one div once')
+            }
         }
     
        }
