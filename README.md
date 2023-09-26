@@ -1,5 +1,5 @@
 features:
-1.A navbar with 3 values
+1.A navbar with three values
 2.Display all donation info 
 3.Search donation by category
 4.Donation details shows 

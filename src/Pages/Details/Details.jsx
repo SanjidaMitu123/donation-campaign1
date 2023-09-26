@@ -80,7 +80,7 @@ const Details = () => {
         </div>
         <div className="p-2 mb-2">
           <div className=" mt-[-20px] mr-[40px] ml-10 flex items-center justify-between">
-            <p className="block ml-60 mt-2 text-5xl font-sans text-center text-base font-medium leading-relaxed text-blue-gray-900 antialiased">
+            <p className="block ml-60 mt-2 text-5xl font-sans text-center font-medium leading-relaxed text-blue-gray-900 antialiased">
             {title}
             </p>
       
