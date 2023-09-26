@@ -9,12 +9,11 @@ const Banner = () => {
   const [searchvalue,setsearchvalue] = useState ("");
   // const [searchdata,setsearchdata] = useState ([]);
 
-
+     
   const changevalue = (value) =>{
     setsearchvalue(value);
-  }
- 
 
+  }
     return (
         <div className="mt-[-130px] h-[450px] lg:w-[100%] sm:[100%]]">
             <div className=" hero  h-[450px] mt-6" style={{backgroundImage: 'url(https://media.istockphoto.com/id/1353332258/photo/donation-concept-the-volunteer-giving-a-donate-box-to-the-recipient-standing-against-the-wall.jpg?s=1024x1024&w=is&k=20&c=UfQbrpSOsJU2zmGwBoEHAr6rUbTR3BCBHVap6gof9eI=)'}}>

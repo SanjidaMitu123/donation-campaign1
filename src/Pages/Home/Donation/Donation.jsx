@@ -47,7 +47,7 @@ const Donation = () => {
               
               
               { donationlistview.length > 3 &&
-                <button onClick={()=>setshowall(!showall)} className="px-5 mt-4 bg-blue-500 block mx-auto rounded-md"> 
+                <button onClick={()=>setshowall(!showall)} className="px-5 p-2 mt-4 bg-[#009444] text-white block mx-auto rounded-md"> 
                 { showall ? "Show Less": "Show All"} 
                 </button>
               }
