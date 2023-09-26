@@ -1,30 +1,54 @@
-import { Pie, PieChart } from "recharts";
+
+import { useEffect, useState } from "react"
+import { Chart } from "react-google-charts"
 
 
 const Statistics = () => {
+
+  const [donationlistview,setdonationlistview] = useState ([])
+  const [nodata,setnodata] = useState ("")
+  const [totald,settotald] = useState (0)
+   console.log(donationlistview)
+   console.log(nodata)
+   
+  useEffect(()=>{
+    const donatelist = JSON.parse(localStorage.getItem('list'))
+    if(donatelist){
+        setdonationlistview(donatelist)
+
+        const total = donatelist.reduce((preValue,currentValue)=> preValue + currentValue.price,0)
+        settotald(total)
+    }
+    else{
+        
+        setnodata('Please Donate')
+    }
+},[])
  
-
-const data01 = [
-  {
-    "name": "MY DONATION",
-    "value": 7000
-  }
-];
-const data02 = [
-  {
-    "name": "TOTAL DONATION",
-    "value": 14000
-  }
-];
+   const data = [
+    ["Task", "Hours per Day"],
+    ["Total Donation", 1200],
+    ["My Donation"  , 550 ],
+  
+  ];
+  
+   const options = {
+    title: "Statistic",
+  };
+  
+  
     return (
-        <div>
-            <PieChart width={730} height={250} >
-            <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#FF444A" />
-  <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#00C49F" label />
-
-            </PieChart>
-        </div>
+      <div><h1 className="text-2xl text-center">My Total Donation : $ {totald} </h1>
+      <Chart
+        chartType="PieChart"
+        data={data}
+        options={options}
+        width={"700px"}
+        height={"700px"}
+      />
+      </div>
     );
-};
+  }
 
 export default Statistics;
+
